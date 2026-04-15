@@ -5,6 +5,7 @@ import MyComputer from './MyComputer';
 import Notepad from './Notepad';
 import Winamp from './Winamp';
 import Paint from './Paint';
+import CommandPrompt from './CommandPrompt';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import mine from 'assets/minesweeper/mine-icon.png';
@@ -16,6 +17,7 @@ import notepadLarge from 'assets/windowsIcons/327(32x32).png';
 import winamp from 'assets/windowsIcons/winamp.png';
 import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
+import cmdIcon from 'assets/windowsIcons/290.png';
 
 const gen = () => {
   let id = -1;
@@ -151,6 +153,13 @@ export const defaultIconState = [
     icon: paintLarge,
     title: 'Paint',
     component: Paint,
+    isFocus: false,
+  },
+  {
+    id: 6,
+    icon: cmdIcon,
+    title: 'Command Prompt',
+    component: CommandPrompt,
     isFocus: false,
   },
 ];
@@ -292,6 +301,25 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
+  'Command Prompt': {
+    header: {
+      icon: cmdIcon,
+      title: 'Command Prompt',
+    },
+    component: CommandPrompt,
+    defaultSize: {
+      width: 600,
+      height: 400,
+    },
+    defaultOffset: {
+      x: 100,
+      y: 100,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: false,
+    multiInstance: false,
+  },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Winamp };
+export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Winamp, CommandPrompt };
